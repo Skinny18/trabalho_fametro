@@ -24,8 +24,25 @@ import {
   PresentationMain,
 } from "./styles";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+    // history.push('/login');
+  };
   return (
     <>
       <BackgroundImage>
@@ -35,7 +52,7 @@ const Home = () => {
               <img className="logo" src={Logo} alt="" />
               <nav className="navbar">
                 <Link to="/section" >MUDANÇAS CLIMÁTICAS</Link>
-                <Link to="/complaint" >DENUNCIAS</Link>
+                <Link to="/complaint" >DENÚNCIAS</Link>
 
               </nav>
             </Header>
@@ -202,12 +219,7 @@ const Home = () => {
         </PageMainContent>
       </PageMainContainer>
 
-      <FooterContainer id="foot">
-        <FooterContent>
-            <img className="logo" src={Logo} alt="" />
-            <p> Hyago matos <br /> André Luiz <br /> Luiz Freitas <br /> Gabriel Carlos <br /> Carlos Portela</p>
-        </FooterContent>
-      </FooterContainer>
+      <Footer />
     </>
   );
 };

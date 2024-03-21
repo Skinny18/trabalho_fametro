@@ -12,6 +12,7 @@ import Image9 from "../../assets/9.webp";
 import Image10 from "../../assets/10.jpg";
 import {
   BackgroundImage,
+  ComplaintContainer,
   DisasterColumn,
   DisasterContainer,
   FooterContainer,
@@ -26,6 +27,7 @@ import {
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Footer from "../../components/Footer";
 
 interface Complaint {
   id: number;
@@ -65,7 +67,7 @@ const Complaint = () => {
             </Header>
             <PresentationMain>
               <h1>
-                Denuncias de
+                Denúncias de
                 <br /> <span>Crimes Ambientais</span> <br />
               </h1>
               <p>
@@ -78,101 +80,19 @@ const Complaint = () => {
 
       <PageMainContainer id="main">
         <PageMainContent>
-          <DisasterColumn id="column-1">
-            <DisasterContainer>
-              <h2>2000</h2>
-              <div className="disaster-content"></div>
-            </DisasterContainer>
-
             <div>
             {data.map((item, index) => (
-              <DisasterContainer key={index}>
+              <ComplaintContainer key={index}>
                 <h3>{item.name}</h3>
                 <div className="disaster-content">
                   <p>{item.options}</p>
                 </div>
-              </DisasterContainer>
+              </ComplaintContainer>
             ))}
           </div>
-
-
-           
-            <DisasterContainer>
-              <h2>...</h2>
-            </DisasterContainer>
-          </DisasterColumn>
-
-          <DisasterColumn id="column-2">
-            <DisasterContainer>
-              <h2>2013</h2>
-              <div className="disaster-content">
-                <h3>Tufão Haiyan</h3>
-                <p>
-                  Conhecido nas Filipinas como Yolanda, o tufão Haiyan atingiu o
-                  país em novembro de 2013, causando devastação generalizada.
-                  Mais de 6.000 pessoas morreram e milhões foram deslocadas.
-                </p>
-                <img src={Image6} alt="" />
-              </div>
-            </DisasterContainer>
-
-            <DisasterContainer>
-              <h2>2015</h2>
-              <div className="disaster-content">
-                <h3>Terremoto de Nepal</h3>
-                <p>
-                  Um terremoto de magnitude 7,8 atingiu o Nepal em abril de
-                  2015, causando uma enorme devastação. Mais de 9.000 pessoas
-                  morreram e muitas outras ficaram feridas ou desabrigadas.
-                </p>
-                <img src={Image7} alt="" />
-              </div>
-            </DisasterContainer>
-
-            <DisasterContainer>
-              <h2>2017</h2>
-              <div className="disaster-content">
-                <h3>Furacão Harvey</h3>
-                <p>
-                  Harvey atingiu o Texas em agosto de 2017, causando inundações
-                  catastróficas e danos generalizados. Foi o furacão mais caro
-                  já registrado nos Estados Unidos, com danos estimados em mais
-                  de US$ 125 bilhões.
-                </p>
-                <img src={Image8} alt="" />
-              </div>
-            </DisasterContainer>
-
-            <DisasterContainer>
-              <h2>2019-2020</h2>
-              <div className="disaster-content">
-                <h3>Incêndios florestais na Austrália</h3>
-                <p>
-                  Os incêndios florestais na Austrália, que começaram em 2019 e
-                  se estenderam até 2020, foram alguns dos mais severos já
-                  registrados no país. Milhões de hectares foram queimados,
-                  causando perda de vidas humanas, danos à fauna e flora, e
-                  destruição de propriedades.
-                </p>
-                <img src={Image9} alt="" />
-              </div>
-            </DisasterContainer>
-
-            
-
-            <DisasterContainer>
-              <h2>.</h2>
-            </DisasterContainer>
-          </DisasterColumn>
         </PageMainContent>
       </PageMainContainer>
-
-      <FooterContainer id="foot">
-        <FooterContent>
-            <img className="logo" src={Logo} alt="" />
-            <p> Hyago matos <br /> André Luiz <br /> Luiz Freitas <br /> Gabriel Carlos <br /> Carlos Portela</p>
-        </FooterContent>
-      </FooterContainer>
+      <Footer />
     </>
   );
 };

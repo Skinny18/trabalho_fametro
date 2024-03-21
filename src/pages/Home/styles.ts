@@ -94,6 +94,48 @@ export const DisasterColumn = styled.div`
 
 `
 
+export const ComplaintContainer = styled.div`
+width: 500px;
+margin: 0 auto;
+h2 {
+	font-family: "Inria Serif", serif;
+	font-size: 90px;
+	font-weight: 300;
+	color: #E6E6E6;
+	margin: 10px 0;
+}
+
+	.disaster-content {
+		display: flex;
+		flex-direction: column;
+		padding-left: 20px;
+		padding-bottom: 70px;
+		min-height: 123px;
+		border-left: 3px solid #808080;
+		gap: 10px;
+	}
+
+	h3 {
+		font-size: 34px;
+		font-weight: 700;
+		color: #D9D9D9;
+	}
+
+	p {
+		max-width: 400px;
+		font-size: 20px;
+		line-height: 26px;
+		color: #ccc;
+	}
+
+	img {
+		max-width: 400px;
+	}
+`
+
+
+
+
 export const DisasterContainer = styled.div`
 
 
