@@ -94,6 +94,31 @@ const Login = () => {
               <h1>
                 Login
                 </h1>
+                <InputContent>
+
+<div className="formulario-container">
+        
+  <form onSubmit={handleSubmit}>
+
+    <label htmlFor="nome">E-mail:</label>
+    <input
+      type="text"
+      id="email"
+      value={email}
+      onChange={handleEmailChange}
+    />
+
+    <label htmlFor="opinioes">Senha:</label>
+    <input
+    type="password"
+      id="password"
+      value={password}
+      onChange={handlePasswordChange}
+    />
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+</InputContent>
             </PresentationMain>
           </PresentationContent>
         </PresentationContainer>
@@ -104,32 +129,7 @@ const Login = () => {
           <DisasterColumn id="column-1">
             
            
-          <InputContent>
 
-            <div className="formulario-container">
-                    
-              <form onSubmit={handleSubmit}>
-                <h2>Login</h2>
-
-                <label htmlFor="nome">E-mail:</label>
-                <input
-                  type="text"
-                  id="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                />
-
-                <label htmlFor="opinioes">Senha:</label>
-                <input
-                type="password"
-                  id="password"
-                  value={password}
-                  onChange={handlePasswordChange}
-                />
-                <button type="submit">Enviar</button>
-              </form>
-            </div>
-            </InputContent>
             
            
 
